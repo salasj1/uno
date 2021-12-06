@@ -8,7 +8,7 @@ from game import Game
 def generate_card_for_players():
     cards = create_all_cards()
     random.shuffle(cards)
-    return cards[0:9], cards[9:18], cards[18:27], cards[27:36]
+    return cards[0:10], cards[9:19], cards[18:28], cards[27:37]
 
 a, b, c, d = generate_card_for_players()
 player_a = Player("Player A", a)

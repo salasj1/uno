@@ -16,3 +16,5 @@ class Card:
         else:
             return self.number
 
+    def reverse(self, game):
+        game.reverse()
