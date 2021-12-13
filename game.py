@@ -47,6 +47,19 @@ class Game:
         else:
             self.turn = "clockwise"
 
+    def skip(self):
+        # clockwise: 1 -> 3, 2 -> 4, 3 -> 1, 4 -> 2
+        # counterclockwise: 1 -> 3, 2 -> 4, 3 -> 1, 4 -> 2
+
+        if self.previous_player == 1:
+            self.previous_player = 3
+        elif self.previous_player == 2:
+            self.previous_player = 4
+        elif self.previous_player == 3:
+            self.previous_player = 1
+        elif self.previous_player == 4:
+            self.previous_player = 2
+
     def get_next_player(self):
         if self.turn == "clockwise":
             if self.previous_player == 4:
@@ -64,25 +77,29 @@ class Game:
         self.player1.print_cards()
         self.previous_card = self.player1.prompt_card(self.previous_card, self)
         clear()
-        self.previous_player = 1
+        if self.previous_player == 4:
+            self.previous_player = 1
 
     def player2_play(self):
         print("Player 2, please make your choice. ")
         self.player2.print_cards()
         self.previous_card = self.player2.prompt_card(self.previous_card, self)
         clear()
-        self.previous_player = 2
+        if self.previous_player == 1:
+            self.previous_player = 2
 
     def player3_play(self):
         print("Player 3, please make your choice. ")
         self.player3.print_cards()
         self.previous_card = self.player3.prompt_card(self.previous_card, self)
         clear()
-        self.previous_player = 3
+        if self.previous_player == 2:
+            self.previous_player = 3
 
     def player4_play(self):
         print("Player 4, please make your choice. ")
         self.player4.print_cards()
         self.previous_card = self.player4.prompt_card(self.previous_card, self)
         clear()
-        self.previous_player = 4
+        if self.previous_player == 3:
+            self.previous_player = 4

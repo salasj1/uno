@@ -7,7 +7,7 @@ def create_all_cards():
     for color in ["red", "green", "blue", "yellow"]:
         for number in range(1, 10):
             deck.append(Card(color, number, None))
-        for special_ability in ["reverse"]: # , "reverse", "+2", "wild", "wild+4"
+        for special_ability in ["reverse", "skip"]: # , "reverse", "+2", "wild", "wild+4"
             deck.append(Card(color, special_ability=special_ability))
 
     # deck.append(Card(special_ability="+4"))

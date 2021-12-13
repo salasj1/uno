@@ -18,3 +18,6 @@ class Card:
 
     def reverse(self, game):
         game.reverse()
+
+    def skip(self, game):
+        game.skip()

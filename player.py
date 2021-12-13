@@ -1,5 +1,4 @@
 from termcolor import colored
-\
 from helpers import create_all_cards, clear
 import random
 
@@ -36,11 +35,15 @@ class Player:
                 if str(c) == card and (previous_card.color == c.color or previous_card.number == c.number):
                     if c.special_ability == "reverse":
                         game.reverse()
+                    if c.special_ability == "skip":
+                        game.skip()
                     return True
             else:
                 if str(c) == card:
                     if c.special_ability == "reverse":
                         game.reverse()
+                    if c.special_ability == "skip":
+                        game.skip()
                     return True
         return False
 
