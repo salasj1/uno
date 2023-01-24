@@ -7,15 +7,15 @@ def create_all_cards():
     for color in ["red", "green", "blue", "yellow"]:
         for number in range(1, 10):
             deck.append(Card(color, number, None))
-        for special_ability in ["reverse", "skip"]: # , "reverse", "+2", "wild", "wild+4"
+        for special_ability in ["reverse", "skip", "+2",]: # , "reverse", "+2", "wild", "wild+4"
             deck.append(Card(color, special_ability=special_ability))
-
-    # deck.append(Card(special_ability="+4"))
-    # deck.append(Card(special_ability="+4"))
-    # deck.append(Card(special_ability="everything"))
-    # deck.append(Card(special_ability="everything"))
-
+    
+    for n in range(0,4):
+            deck.append(Card("white",special_ability="wild"))
+            deck.append(Card("white",special_ability="+4"))
+    
     return deck
 
 def clear():
-    _ = call('clear' if os.name =='posix' else 'cls')
+    os.system('cls') 
+
