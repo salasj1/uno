@@ -21,3 +21,12 @@ class Card:
 
     def skip(self, game):
         game.skip()
+
+    def mas2(self, game):
+        game.mas2()
+    
+    def wild(self, game):
+        game.wild()
+    
+    def mas4(self, game):
+        game.mas4()
